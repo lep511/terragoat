@@ -3,18 +3,22 @@ name: IaC tag and trace
 on:
   push:
   pull_request:
-
-jobs:
-  yor:
-    runs-on: ubuntu-latest
-    permissions:
-      contents: write
   
+jobs:
+  yor-job:
+    runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
-        name: Checkout repo
+      - name: Checkout repo
+        uses: actions/checkout@v2
         with:
           fetch-depth: 0
       - name: Yor GitHub Action
-        uses: bridgecrewio/yor-action@0.3.0
-        
+  uses: bridgecrewio/yor-action@0.3.0
+        with:
+          directory: path/to/iac
+          skip_directory: test
+          log_level: DEBUG
+          tag: git_modifiers,git_commit,git_repository,yor_trace
+          tag_groups: git,code2cloud
+          custom_tags: path/to/plugin.so
+          output_format: json
