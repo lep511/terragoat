@@ -7,7 +7,7 @@ resource azurerm_app_service_plan "example" {
     tier = "Dynamic"
     size = "S1"
   }
-  tags = {
+  tags = merge({
     git_commit           = "898d5beaec7ffdef6df0d7abecff407362e2a74e"
     git_file             = "terraform/azure/app_service.tf"
     git_last_modified_at = "2020-06-17 12:59:55"
@@ -16,7 +16,9 @@ resource azurerm_app_service_plan "example" {
     git_org              = "bridgecrewio"
     git_repo             = "terragoat"
     yor_trace            = "6611bf45-fd5b-467e-b119-d533cd7539b8"
-  }
+    }, {
+    another-key = "another_val"
+  })
 }
 
 resource azurerm_app_service "app-service1" {
@@ -28,7 +30,7 @@ resource azurerm_app_service "app-service1" {
   site_config {
     min_tls_version = "1.1"
   }
-  tags = {
+  tags = merge({
     git_commit           = "81738b80d571fa3034633690d13ffb460e1e7dea"
     git_file             = "terraform/azure/app_service.tf"
     git_last_modified_at = "2020-06-19 21:14:50"
@@ -37,7 +39,9 @@ resource azurerm_app_service "app-service1" {
     git_org              = "bridgecrewio"
     git_repo             = "terragoat"
     yor_trace            = "13be096d-c599-46e5-bf54-51c6e9732858"
-  }
+    }, {
+    another-key = "another_val"
+  })
 }
 
 resource azurerm_app_service "app-service2" {
@@ -50,7 +54,7 @@ resource azurerm_app_service "app-service2" {
   auth_settings {
     enabled = false
   }
-  tags = {
+  tags = merge({
     git_commit           = "5c6b5d60a8aa63a5d37e60f15185d13a967f0542"
     git_file             = "terraform/azure/app_service.tf"
     git_last_modified_at = "2021-05-02 10:06:10"
@@ -59,6 +63,8 @@ resource azurerm_app_service "app-service2" {
     git_org              = "bridgecrewio"
     git_repo             = "terragoat"
     yor_trace            = "ec8295ab-af68-4cff-b0f1-b0cf5eaf1b75"
-  }
+    }, {
+    another-key = "another_val"
+  })
 }
 
