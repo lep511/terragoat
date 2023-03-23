@@ -3,6 +3,9 @@ name: IaC tag and trace
 on:
   push:
   pull_request:
+  
+env:
+  YOR_SIMPLE_TAGS: '{"somekey": "somevalue", "another-key": "another_val"}'
 
 jobs:
   yor:
