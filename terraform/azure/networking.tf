@@ -3,7 +3,7 @@ resource "azurerm_virtual_network" "example" {
   address_space       = ["10.0.0.0/16"]
   location            = azurerm_resource_group.example.location
   resource_group_name = azurerm_resource_group.example.name
-  tags = {
+  tags = merge({
     git_commit           = "898d5beaec7ffdef6df0d7abecff407362e2a74e"
     git_file             = "terraform/azure/networking.tf"
     git_last_modified_at = "2020-06-17 12:59:55"
@@ -12,7 +12,11 @@ resource "azurerm_virtual_network" "example" {
     git_org              = "bridgecrewio"
     git_repo             = "terragoat"
     yor_trace            = "eb19f165-9c21-4a7a-96e5-5bb557a38228"
-  }
+    }, {
+    another-key = "another_val"
+    }, {
+    somekey = "somevalue"
+  })
 }
 
 resource "azurerm_subnet" "example" {
@@ -32,7 +36,7 @@ resource "azurerm_network_interface" "ni_linux" {
     subnet_id                     = azurerm_subnet.example.id
     private_ip_address_allocation = "Dynamic"
   }
-  tags = {
+  tags = merge({
     git_commit           = "de3bb777f967989c2c3332faea16cb614c55ccc9"
     git_file             = "terraform/azure/networking.tf"
     git_last_modified_at = "2020-06-17 15:48:15"
@@ -41,7 +45,11 @@ resource "azurerm_network_interface" "ni_linux" {
     git_org              = "bridgecrewio"
     git_repo             = "terragoat"
     yor_trace            = "2647f099-dff8-4514-8cef-96159380c02a"
-  }
+    }, {
+    another-key = "another_val"
+    }, {
+    somekey = "somevalue"
+  })
 }
 
 resource "azurerm_network_interface" "ni_win" {
@@ -54,7 +62,7 @@ resource "azurerm_network_interface" "ni_win" {
     subnet_id                     = azurerm_subnet.example.id
     private_ip_address_allocation = "Dynamic"
   }
-  tags = {
+  tags = merge({
     git_commit           = "de3bb777f967989c2c3332faea16cb614c55ccc9"
     git_file             = "terraform/azure/networking.tf"
     git_last_modified_at = "2020-06-17 15:48:15"
@@ -63,7 +71,11 @@ resource "azurerm_network_interface" "ni_win" {
     git_org              = "bridgecrewio"
     git_repo             = "terragoat"
     yor_trace            = "2b5dbf28-04fb-4151-a637-a731bbe7ed1d"
-  }
+    }, {
+    another-key = "another_val"
+    }, {
+    somekey = "somevalue"
+  })
 }
 
 resource azurerm_network_security_group "bad_sg" {
@@ -94,7 +106,7 @@ resource azurerm_network_security_group "bad_sg" {
     destination_port_range     = "3389-3389"
     destination_address_prefix = "*"
   }
-  tags = {
+  tags = merge({
     git_commit           = "5c6b5d60a8aa63a5d37e60f15185d13a967f0542"
     git_file             = "terraform/azure/networking.tf"
     git_last_modified_at = "2021-05-02 10:06:10"
@@ -103,14 +115,18 @@ resource azurerm_network_security_group "bad_sg" {
     git_org              = "bridgecrewio"
     git_repo             = "terragoat"
     yor_trace            = "1a591ba4-d969-4572-9704-87b5c55c0ba3"
-  }
+    }, {
+    another-key = "another_val"
+    }, {
+    somekey = "somevalue"
+  })
 }
 
 resource azurerm_network_watcher "network_watcher" {
   location            = var.location
   name                = "terragoat-network-watcher-${var.environment}"
   resource_group_name = azurerm_resource_group.example.name
-  tags = {
+  tags = merge({
     git_commit           = "898d5beaec7ffdef6df0d7abecff407362e2a74e"
     git_file             = "terraform/azure/networking.tf"
     git_last_modified_at = "2020-06-17 12:59:55"
@@ -119,7 +135,11 @@ resource azurerm_network_watcher "network_watcher" {
     git_org              = "bridgecrewio"
     git_repo             = "terragoat"
     yor_trace            = "3da368fc-723f-43d2-8e82-08dcc91e5094"
-  }
+    }, {
+    another-key = "another_val"
+    }, {
+    somekey = "somevalue"
+  })
 }
 
 resource azurerm_network_watcher_flow_log "flow_log" {
@@ -132,7 +152,7 @@ resource azurerm_network_watcher_flow_log "flow_log" {
     enabled = false
     days    = 10
   }
-  tags = {
+  tags = merge({
     git_commit           = "898d5beaec7ffdef6df0d7abecff407362e2a74e"
     git_file             = "terraform/azure/networking.tf"
     git_last_modified_at = "2020-06-17 12:59:55"
@@ -141,5 +161,9 @@ resource azurerm_network_watcher_flow_log "flow_log" {
     git_org              = "lep511"
     git_repo             = "terragoat"
     yor_trace            = "33a7212e-7f1a-49fc-af73-8e525c5546ec"
-  }
+    }, {
+    another-key = "another_val"
+    }, {
+    somekey = "somevalue"
+  })
 }

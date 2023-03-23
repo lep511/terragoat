@@ -38,6 +38,10 @@ resource azurerm_linux_virtual_machine "linux_machine" {
     git_org              = "bridgecrewio"
     git_repo             = "terragoat"
     yor_trace            = "736ef713-51b8-4178-ad69-406be81f6ef2"
+    }, {
+    another-key = "another_val"
+    }, {
+    somekey = "somevalue"
   })
 }
 
@@ -73,5 +77,9 @@ resource azurerm_windows_virtual_machine "windows_machine" {
     git_org              = "bridgecrewio"
     git_repo             = "terragoat"
     yor_trace            = "41938587-bdfc-4234-b941-560f1ae7d6c0"
+    }, {
+    another-key = "another_val"
+    }, {
+    somekey = "somevalue"
   })
 }

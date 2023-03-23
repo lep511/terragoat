@@ -3,6 +3,9 @@ name: IaC tag and trace
 on:
   push:
   pull_request:
+  
+env:
+  YOR_SIMPLE_TAGS: '{"somekey": "somevalue", "another-key": "another_val"}'
 
 jobs:
   yor:
@@ -15,5 +18,5 @@ jobs:
         name: Checkout repo
         with:
           fetch-depth: 0
-      - name: Run yor action
-        uses: bridgecrewio/yor-action@main
+      - name: Yor GitHub Action
+        uses: bridgecrewio/yor-action@0.3.0

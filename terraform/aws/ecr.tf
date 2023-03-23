@@ -13,6 +13,10 @@ resource aws_ecr_repository "repository" {
     git_org              = "bridgecrewio"
     git_repo             = "terragoat"
     yor_trace            = "7a3ec657-fa54-4aa2-8467-5d08d6c90bc2"
+    }, {
+    another-key = "another_val"
+    }, {
+    somekey = "somevalue"
   })
 }
 

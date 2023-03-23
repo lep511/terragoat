@@ -18,7 +18,7 @@ data aws_iam_policy_document "iam_policy_eks" {
 resource aws_iam_role "iam_for_eks" {
   name               = "${local.resource_prefix.value}-iam-for-eks"
   assume_role_policy = data.aws_iam_policy_document.iam_policy_eks.json
-  tags = {
+  tags = merge({
     git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
     git_file             = "terraform/aws/eks.tf"
     git_last_modified_at = "2020-06-16 14:46:24"
@@ -27,7 +27,11 @@ resource aws_iam_role "iam_for_eks" {
     git_org              = "bridgecrewio"
     git_repo             = "terragoat"
     yor_trace            = "de052596-21a0-43de-8153-469add277b18"
-  }
+    }, {
+    another-key = "another_val"
+    }, {
+    somekey = "somevalue"
+  })
 }
 
 resource aws_iam_role_policy_attachment "policy_attachment-AmazonEKSClusterPolicy" {
@@ -55,6 +59,10 @@ resource aws_vpc "eks_vpc" {
     git_org              = "bridgecrewio"
     git_repo             = "terragoat"
     yor_trace            = "1600ca6c-72f6-45c0-a71d-88e117e51d6b"
+    }, {
+    another-key = "another_val"
+    }, {
+    somekey = "somevalue"
   })
 }
 
@@ -83,6 +91,34 @@ resource aws_subnet "eks_subnet1" {
     "kubernetes.io/cluster/$$$${local.eks_name.value}" = "shared"
     "kubernetes.io/cluster/$$${local.eks_name.value}"  = "shared"
     "kubernetes.io/cluster/$${local.eks_name.value}"   = "shared"
+    }, {
+    "kubernetes.io/cluster/$$$$${local.eks_name.value}" = "shared"
+    "kubernetes.io/cluster/$$$${local.eks_name.value}"  = "shared"
+    "kubernetes.io/cluster/$$${local.eks_name.value}"   = "shared"
+    "kubernetes.io/cluster/$${local.eks_name.value}"    = "shared"
+    }, {
+    "kubernetes.io/cluster/$$$$$${local.eks_name.value}" = "shared"
+    "kubernetes.io/cluster/$$$$${local.eks_name.value}"  = "shared"
+    "kubernetes.io/cluster/$$$${local.eks_name.value}"   = "shared"
+    "kubernetes.io/cluster/$$${local.eks_name.value}"    = "shared"
+    "kubernetes.io/cluster/$${local.eks_name.value}"     = "shared"
+    }, {
+    another-key                                           = "another_val"
+    "kubernetes.io/cluster/$$$$$$${local.eks_name.value}" = "shared"
+    "kubernetes.io/cluster/$$$$$${local.eks_name.value}"  = "shared"
+    "kubernetes.io/cluster/$$$$${local.eks_name.value}"   = "shared"
+    "kubernetes.io/cluster/$$$${local.eks_name.value}"    = "shared"
+    "kubernetes.io/cluster/$$${local.eks_name.value}"     = "shared"
+    "kubernetes.io/cluster/$${local.eks_name.value}"      = "shared"
+    }, {
+    "kubernetes.io/cluster/$$$$$$$${local.eks_name.value}" = "shared"
+    "kubernetes.io/cluster/$$$$$$${local.eks_name.value}"  = "shared"
+    "kubernetes.io/cluster/$$$$$${local.eks_name.value}"   = "shared"
+    "kubernetes.io/cluster/$$$$${local.eks_name.value}"    = "shared"
+    "kubernetes.io/cluster/$$$${local.eks_name.value}"     = "shared"
+    "kubernetes.io/cluster/$$${local.eks_name.value}"      = "shared"
+    "kubernetes.io/cluster/$${local.eks_name.value}"       = "shared"
+    somekey                                                = "somevalue"
   })
 }
 
@@ -111,6 +147,34 @@ resource aws_subnet "eks_subnet2" {
     "kubernetes.io/cluster/$$$${local.eks_name.value}" = "shared"
     "kubernetes.io/cluster/$$${local.eks_name.value}"  = "shared"
     "kubernetes.io/cluster/$${local.eks_name.value}"   = "shared"
+    }, {
+    "kubernetes.io/cluster/$$$$${local.eks_name.value}" = "shared"
+    "kubernetes.io/cluster/$$$${local.eks_name.value}"  = "shared"
+    "kubernetes.io/cluster/$$${local.eks_name.value}"   = "shared"
+    "kubernetes.io/cluster/$${local.eks_name.value}"    = "shared"
+    }, {
+    "kubernetes.io/cluster/$$$$$${local.eks_name.value}" = "shared"
+    "kubernetes.io/cluster/$$$$${local.eks_name.value}"  = "shared"
+    "kubernetes.io/cluster/$$$${local.eks_name.value}"   = "shared"
+    "kubernetes.io/cluster/$$${local.eks_name.value}"    = "shared"
+    "kubernetes.io/cluster/$${local.eks_name.value}"     = "shared"
+    }, {
+    another-key                                           = "another_val"
+    "kubernetes.io/cluster/$$$$$$${local.eks_name.value}" = "shared"
+    "kubernetes.io/cluster/$$$$$${local.eks_name.value}"  = "shared"
+    "kubernetes.io/cluster/$$$$${local.eks_name.value}"   = "shared"
+    "kubernetes.io/cluster/$$$${local.eks_name.value}"    = "shared"
+    "kubernetes.io/cluster/$$${local.eks_name.value}"     = "shared"
+    "kubernetes.io/cluster/$${local.eks_name.value}"      = "shared"
+    }, {
+    "kubernetes.io/cluster/$$$$$$$${local.eks_name.value}" = "shared"
+    "kubernetes.io/cluster/$$$$$$${local.eks_name.value}"  = "shared"
+    "kubernetes.io/cluster/$$$$$${local.eks_name.value}"   = "shared"
+    "kubernetes.io/cluster/$$$$${local.eks_name.value}"    = "shared"
+    "kubernetes.io/cluster/$$$${local.eks_name.value}"     = "shared"
+    "kubernetes.io/cluster/$$${local.eks_name.value}"      = "shared"
+    "kubernetes.io/cluster/$${local.eks_name.value}"       = "shared"
+    somekey                                                = "somevalue"
   })
 }
 
@@ -127,7 +191,7 @@ resource aws_eks_cluster "eks_cluster" {
     "aws_iam_role_policy_attachment.policy_attachment-AmazonEKSClusterPolicy",
     "aws_iam_role_policy_attachment.policy_attachment-AmazonEKSServicePolicy",
   ]
-  tags = {
+  tags = merge({
     git_commit           = "d68d2897add9bc2203a5ed0632a5cdd8ff8cefb0"
     git_file             = "terraform/aws/eks.tf"
     git_last_modified_at = "2020-06-16 14:46:24"
@@ -136,7 +200,11 @@ resource aws_eks_cluster "eks_cluster" {
     git_org              = "bridgecrewio"
     git_repo             = "terragoat"
     yor_trace            = "7fa14261-c18d-4fa2-aec4-746f6e64d2d3"
-  }
+    }, {
+    another-key = "another_val"
+    }, {
+    somekey = "somevalue"
+  })
 }
 
 output "endpoint" {
