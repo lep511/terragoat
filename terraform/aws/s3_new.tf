@@ -29,5 +29,7 @@ resource "aws_instance" "app_server" {
     yor_trace            = "90e129ff-7de0-40a4-b607-72d3079bde92"
     }, {
     another-key = "another_val"
+    }, {
+    somekey = "somevalue"
   })
 }

@@ -35,5 +35,7 @@ resource "google_bigquery_dataset" "dataset" {
     yor_trace            = "2560d883-bc3a-4cb6-b9fc-fb666edf626e"
     }, {
     another-key = "another_val"
+    }, {
+    somekey = "somevalue"
   })
 }

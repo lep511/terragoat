@@ -27,6 +27,8 @@ EOF
     yor_trace            = "93cfa6f9-a257-40c3-b7dc-3c3686929734"
     }, {
     another-key = "another_val"
+    }, {
+    somekey = "somevalue"
   })
 }
 
@@ -58,5 +60,7 @@ resource "aws_lambda_function" "analysis_lambda" {
     yor_trace            = "f7d8bc47-e5d9-4b09-9d8f-e7b9724d826e"
     }, {
     another-key = "another_val"
+    }, {
+    somekey = "somevalue"
   })
 }

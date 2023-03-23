@@ -58,6 +58,8 @@ resource "aws_security_group" "project-iac-sg" {
     yor_trace            = "4a0056ca-d769-467e-b6f3-a07f45bab1fb"
     }, {
     another-key = "another_val"
+    }, {
+    somekey = "somevalue"
   })
 }
 
@@ -95,6 +97,8 @@ resource "aws_instance" "project-iac" {
     yor_trace            = "54bbd160-dc25-4834-93b9-9a901c1d6916"
     }, {
     another-key = "another_val"
+    }, {
+    somekey = "somevalue"
   })
 
   depends_on = [aws_security_group.project-iac-sg]

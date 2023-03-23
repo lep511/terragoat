@@ -34,6 +34,8 @@ resource "aws_db_instance" "default" {
     yor_trace            = "47c13290-c2ce-48a7-b666-1b0085effb92"
     }, {
     another-key = "another_val"
+    }, {
+    somekey = "somevalue"
   })
 
   # Ignore password changes from tf plan diff
@@ -62,6 +64,8 @@ resource "aws_db_option_group" "default" {
     yor_trace            = "c8076043-5de7-4203-9a1c-b4e61900628a"
     }, {
     another-key = "another_val"
+    }, {
+    somekey = "somevalue"
   })
 }
 
@@ -96,6 +100,8 @@ resource "aws_db_parameter_group" "default" {
     yor_trace            = "6432b3f9-3f45-4463-befc-2e0f2fbdffc1"
     }, {
     another-key = "another_val"
+    }, {
+    somekey = "somevalue"
   })
 }
 
@@ -118,6 +124,8 @@ resource "aws_db_subnet_group" "default" {
     yor_trace            = "b8368249-50c5-4a24-bdb0-9f83d197b11c"
     }, {
     another-key = "another_val"
+    }, {
+    somekey = "somevalue"
   })
 }
 
@@ -139,6 +147,8 @@ resource "aws_security_group" "default" {
     yor_trace            = "7b251090-8ac1-4290-bd2e-bf3e16126430"
     }, {
     another-key = "another_val"
+    }, {
+    somekey = "somevalue"
   })
 }
 
@@ -176,6 +186,8 @@ resource "aws_iam_instance_profile" "ec2profile" {
     yor_trace            = "6d33b2b9-2dd3-4915-b5d4-283152c928f1"
     }, {
     another-key = "another_val"
+    }, {
+    somekey = "somevalue"
   })
 }
 
@@ -213,6 +225,8 @@ EOF
     yor_trace            = "d4b631c1-c1d0-4986-affb-fb8b94a6a7a5"
     }, {
     another-key = "another_val"
+    }, {
+    somekey = "somevalue"
   })
 }
 
@@ -424,6 +438,8 @@ EOF
     yor_trace            = "f7999d4e-c983-43ee-bd88-7903a6f8483e"
     }, {
     another-key = "another_val"
+    }, {
+    somekey = "somevalue"
   })
 }
 
