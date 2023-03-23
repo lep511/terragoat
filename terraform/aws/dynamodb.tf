@@ -1,7 +1,7 @@
 # Example of a DynamoDB table
 # https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/dynamodb_table
 resource "aws_dynamodb_table" "basic-dynamodb-table" {
-	# checkov:skip=CKV_AWS_119: "DynamoDB tables are not encrypted by default"
+  # checkov:skip=CKV_AWS_119: "DynamoDB tables are not encrypted by default"
   name           = "GameScores"
   billing_mode   = "PROVISIONED"
   read_capacity  = 20
@@ -39,10 +39,21 @@ resource "aws_dynamodb_table" "basic-dynamodb-table" {
     non_key_attributes = ["UserId"]
   }
 
-  tags = {
+  tags = merge({
     Name        = "dynamodb-table-1"
     Environment = "production"
-  }
+    }, {
+    another-key          = "another_val"
+    git_commit           = "2ab007c97354c8a8889ba5834cdeb7e573cb1536"
+    git_file             = "terraform/aws/dynamodb.tf"
+    git_last_modified_at = "2023-03-23 22:22:25"
+    git_last_modified_by = "estebanpbuday@gmail.com"
+    git_modifiers        = "estebanpbuday"
+    git_org              = "lep511"
+    git_repo             = "terragoat"
+    somekey              = "somevalue"
+    yor_trace            = "d7ed1b5d-a0b0-4cec-be7d-47001072a97a"
+  })
   point_in_time_recovery {
     enabled = true
   }
