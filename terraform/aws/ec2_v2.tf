@@ -48,11 +48,11 @@ resource "aws_security_group" "project-iac-sg" {
     create_before_destroy = true
   }
   tags = {
-    git_commit           = "249dc07b03ee9d279748855bef68f56b36db01c3"
+    git_commit           = "91138e376486fce1d307dfe30438c6db32326b9f"
     git_file             = "terraform/aws/ec2_v2.tf"
-    git_last_modified_at = "2023-03-23 14:32:13"
-    git_last_modified_by = "46011885+lep511@users.noreply.github.com"
-    git_modifiers        = "46011885+lep511"
+    git_last_modified_at = "2023-03-23 14:36:02"
+    git_last_modified_by = "41898282+github-actions[bot]@users.noreply.github.com"
+    git_modifiers        = "41898282+github-actions[bot]/46011885+lep511"
     git_org              = "lep511"
     git_repo             = "terragoat"
     yor_trace            = "4a0056ca-d769-467e-b6f3-a07f45bab1fb"
@@ -83,11 +83,11 @@ resource "aws_instance" "project-iac" {
     OS          = "UBUNTU"
     Managed     = "IAC"
     }, {
-    git_commit           = "249dc07b03ee9d279748855bef68f56b36db01c3"
+    git_commit           = "91138e376486fce1d307dfe30438c6db32326b9f"
     git_file             = "terraform/aws/ec2_v2.tf"
-    git_last_modified_at = "2023-03-23 14:32:13"
-    git_last_modified_by = "46011885+lep511@users.noreply.github.com"
-    git_modifiers        = "46011885+lep511"
+    git_last_modified_at = "2023-03-23 14:36:02"
+    git_last_modified_by = "41898282+github-actions[bot]@users.noreply.github.com"
+    git_modifiers        = "41898282+github-actions[bot]/46011885+lep511"
     git_org              = "lep511"
     git_repo             = "terragoat"
     yor_trace            = "54bbd160-dc25-4834-93b9-9a901c1d6916"
