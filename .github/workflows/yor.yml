@@ -11,10 +11,10 @@ jobs:
       contents: write
   
     steps:
-      - run: export YOR_SIMPLE_TAGS='{"team": "devops", "env": "prod"}'
       - uses: actions/checkout@v2
         name: Checkout repo
         with:
           fetch-depth: 0
-      - name: Run yor action
-        uses: bridgecrewio/yor-action@main
+      - name: Yor GitHub Action
+        uses: bridgecrewio/yor-action@0.3.0
+        
