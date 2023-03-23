@@ -11,6 +11,7 @@ jobs:
       contents: write
   
     steps:
+      - run: export YOR_SIMPLE_TAGS='{"team": "devops", "env": "prod"}'
       - uses: actions/checkout@v2
         name: Checkout repo
         with:
