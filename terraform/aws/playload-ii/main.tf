@@ -10,14 +10,18 @@ terraform {
 }
 
 provider "aws" {
-  region  = "us-west-2"
+  region = "us-west-2"
 }
 
 resource "aws_instance" "app_server" {
   ami           = "ami-08d70e59c07c61a3a"
   instance_type = "t2.micro"
 
-  tags = {
+  tags = merge({
     Name = var.instance_name
-  }
+    }, {
+    another-key = "another_val"
+    somekey     = "somevalue"
+    yor_trace   = "8a4b413b-5cb7-4ad8-ac41-b0af515fd441"
+  })
 }
