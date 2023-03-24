@@ -44,9 +44,9 @@ resource "aws_dynamodb_table" "basic-dynamodb-table" {
     Environment = "production"
     }, {
     another-key          = "another_val"
-    git_commit           = "2ab007c97354c8a8889ba5834cdeb7e573cb1536"
-    git_file             = "terraform/aws/dynamodb.tf"
-    git_last_modified_at = "2023-03-23 22:22:25"
+    git_commit           = "e8f15b08e9b2600f2f2945b1b83cd6c76f5b36a4"
+    git_file             = "terraform/aws/playload/main.tf"
+    git_last_modified_at = "2023-03-23 23:59:40"
     git_last_modified_by = "estebanpbuday@gmail.com"
     git_modifiers        = "estebanpbuday"
     git_org              = "lep511"
